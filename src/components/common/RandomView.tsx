@@ -1,9 +1,14 @@
+import Image from 'next/image';
+
+const touchImage = () => {
+  return `https://source.unsplash.com/random`;
+}
 
 const RandomView = () => {
   return (
     <div>
       <button>ボタン</button>
-      <div>画像が出る</div>
+      <Image className="w-full" loader={touchImage} src="random" width={500} height={500} alt="ランダムで表示される画像" />
     </div>
   )
 }
