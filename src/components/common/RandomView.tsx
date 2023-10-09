@@ -1,21 +1,21 @@
-import Image from 'next/image'
-
-const touchImage = () => {
-  return `https://source.unsplash.com/random`
-}
+import { useState } from 'react'
 
 const RandomView = () => {
+  const [imageUrl, setImageUrl] = useState('')
+
+  const handleClick = async () => {
+    try {
+      const response = await fetch('https://source.unsplash.com/random')
+      setImageUrl(response.url)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div>
-      <button>ボタン</button>
-      <Image
-        className='w-full'
-        loader={touchImage}
-        src='random'
-        width={500}
-        height={500}
-        alt='ランダムで表示される画像'
-      />
+      <button onClick={handleClick}>ボタン</button>
+      {imageUrl && <img src={imageUrl} />}
     </div>
   )
 }
