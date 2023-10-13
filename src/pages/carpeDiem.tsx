@@ -3,9 +3,9 @@ import { GiFleurDeLys, GiFlowerTwirl } from 'react-icons/gi'
 
 const carpeDiem = () => {
   return (
-    <div className='items-center text-center gap-y-4 grid grid-cols-4 grid-rows-6 p-5'>
-      <h1 className='font-bold col-start-2 col-end-4 row-start-1 text-center'>CalpeDiem</h1>
-      <div className='justify-center bg-red-100 border border-solid border-blue-200 rounded-md row-start-2 row-end-5 col-span-4 w-full h-full'></div>
+    <div className='gap-y-4 grid grid-cols-4 grid-rows-6 p-5'>
+      <h1 className='font-bold col-span-4 row-span-1 text-center'>CalpeDiem</h1>
+      <div className='bg-red-100 border border-solid border-blue-200 rounded-md row-start-2 row-end-5 col-span-4 w-full h-full'></div>
       <div className='flex justify-center row-start-5 col-span-5 gap-10'>
         <Button className='flex gap-1 text-center items-center border border-solid border-blue-200 rounded-md bg-gray-100 w-20'>
           <GiFleurDeLys className='text-amber-300' />
