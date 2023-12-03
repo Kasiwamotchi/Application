@@ -1,0 +1,38 @@
+[
+{
+    "scientific_name": "Mister Lincoln",
+    "japanese_name": "ミスターリンカーン",
+    "tips": "アメリカ原産の非常にオーソドックスな薔薇",
+    "picture": "/mister_lincoln.jpg"
+},
+{
+    "scientific_name": "White Masterpiece",
+    "japanese_name": "ホワイトマスターピース",
+    "tips": "和訳すれば白い傑作。作出者のGene氏の自信が伺える",
+    "picture": "/white_masterpiece.jpg"
+},
+{
+    "scientific_name": "Black Baccara",
+    "japanese_name": "ブラックバカラ",
+    "tips": "黒い薔薇は自然に存在しない。色素が濃くて黒く見えるだけ",
+    "picture": "/black_baccara.jpg"
+},
+{
+    "scientific_name": "Casa Blanca",
+    "japanese_name": "カサブランカ",
+    "tips": "百合の女王とも呼称される非常にオーソドックスな百合",
+    "picture": "/casa_blanca.jpg"
+},
+{
+    "scientific_name": "Maculatum Thunb",
+    "japanese_name": "スカシユリ",
+    "tips": "日本に古くから自生しており、万葉集にも詠われている",
+    "picture": "/maculatum_thunb.jpeg"
+},
+{
+    "scientific_name": "Martagon",
+    "japanese_name": "マルタゴン・リリー",
+    "tips": "海外の人気種。様々な品種の親になった",
+    "picture": "/martagon.jpg"
+}
+]
