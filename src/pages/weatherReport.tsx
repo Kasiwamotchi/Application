@@ -1,35 +1,10 @@
 import Weather from '@/components/common/weather'
-import axios from 'axios'
+import useApi from '@/hooks/useApi'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 const weatherReport = () => {
-  const [weather, setWeather] = useState({
-    link: '',
-    location: { prefecture: '' },
-    forecasts: [
-      {
-        date: '',
-        dateLabel: '',
-        telop: '',
-        temperature: { min: { celsius: '' }, max: { celsius: '' } },
-        image: { url: '', width: '', height: '', title: '' },
-      },
-    ],
-  })
+  const weather = useApi()
 
-  useEffect(() => {
-    const getApi = async () => {
-      try {
-        const response = await axios.get('https://weather.tsukumijima.net/api/forecast/city/130010')
-        setWeather(response.data)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-
-    getApi()
-  }, [])
   return (
     <div className='gap-2 items-center text-center'>
       <div>
