@@ -1,16 +1,17 @@
 import Weather from '@/components/common/weather'
-import useApi from '@/hooks/useApi'
+import useWeatherDate from '@/hooks/useWeatherDate'
 import Link from 'next/link'
 
 const weatherReport = () => {
-  const weather = useApi()
+  const { date, getDate } = useWeatherDate()
+  console.log(date)
 
   return (
     <div className='gap-2 items-center text-center'>
       <div>
-        <p>{weather.location.prefecture}の天気</p>
+        <p>{date.location.prefecture}の天気</p>
         <div className='flex text-center justify-center'>
-          {weather.forecasts.map((value, index, array) => {
+          {date.forecasts.map((value, index, array) => {
             return (
               <div>
                 <Weather
@@ -29,8 +30,9 @@ const weatherReport = () => {
           })}
         </div>
       </div>
+      <button onClick={getDate}>地域変更</button>
       <div>
-        <Link href={weather.link} target='_blank' rel='noopener noreferrer'>
+        <Link href={date.link} target='_blank' rel='noopener noreferrer'>
           天気予報APIより
         </Link>
       </div>

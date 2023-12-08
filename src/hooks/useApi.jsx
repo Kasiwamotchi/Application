@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useApi = () => {
   const [weather, setWeather] = useState({
@@ -27,6 +27,7 @@ const useApi = () => {
 
     getApi()
   }, [])
+
   return weather
 }
 export default useApi
