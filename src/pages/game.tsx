@@ -1,36 +1,26 @@
+import Preparation from '@/features/frontend/games/Preparation'
+import Play from '@/features/frontend/games/play'
 import { useState } from 'react'
 const game = () => {
-  const [playerChoice, setPlayerChoicer] = useState<string>('')
+  const [changeView, setChangeView] = useState<string>('false')
+  const [gameCount, setGameCount] = useState<number[]>([0, 0, 0])
+  const hand = ['グー', 'チョキ', 'パー']
 
-  const pcHand = ['グー', 'チョキ', 'パー']
-  const pcChoice = pcHand[Math.floor(Math.random() * pcHand.length)]
-
-  const gameObject = { playerChoice, pcChoice }
-
-  const judgment = () => {
-    if (gameObject.pcChoice === gameObject.playerChoice) {
-      return 'あいこ'
-    } else if (
-      (gameObject.playerChoice === 'グー' && gameObject.pcChoice === 'チョキ') ||
-      (gameObject.playerChoice === 'チョキ' && gameObject.pcChoice === 'パー') ||
-      (gameObject.playerChoice === 'パー' && gameObject.pcChoice === 'グー')
-    ) {
-      return '勝ち'
-    } else {
-      return '負け'
-    }
+  const toggleComponent = (word: string) => {
+    setChangeView(word)
   }
-  console.log(gameObject.pcChoice)
+  const toggleCount = (number: number[]) => {
+    setGameCount(number)
+  }
 
+  console.log(gameCount)
   return (
     <div>
-      <div>{gameObject.playerChoice ? `${gameObject.pcChoice}` : 'pcの選択'}</div>
-      <div>{gameObject.playerChoice ? `${judgment()}` : '勝敗判定を表示する'}</div>
-      <div className='flex gap-4'>
-        <button onClick={() => setPlayerChoicer('グー')}>グー</button>
-        <button onClick={() => setPlayerChoicer('チョキ')}>チョキ</button>
-        <button onClick={() => setPlayerChoicer('パー')}>パー</button>
-      </div>
+      {changeView === 'false' ? (
+        <Preparation toggleComponent={toggleComponent} hand={hand} toggleCount={toggleCount} gameCount={gameCount} />
+      ) : (
+        <Play toggleComponent={toggleComponent} hand={hand} gameCount={gameCount} />
+      )}
     </div>
   )
 }
