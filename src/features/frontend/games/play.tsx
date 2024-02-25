@@ -48,9 +48,9 @@ const play: React.FC<Props> = (props) => {
     const pcSelect = props.hand[Math.floor(Math.random() * props.hand.length)]
     setPlayerChoice(hand)
     setMemory((prev) => [...prev, judgment(hand, pcSelect)])
-    const newCardAmount = [...cardAmount]
-    newCardAmount[number] = cardAmount[number] - 1
-    setCardAmount(() => newCardAmount)
+    setCardAmount((prevCardAmount) =>
+      prevCardAmount.map((prevValue, index) => (number === index ? prevValue - 1 : prevValue)),
+    )
   }
   console.log(cardAmount)
   return (
